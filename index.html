@@ -91,4 +91,144 @@
         <h2>Mes livres</h2>
         <p class="muted">Des histoires qui célèbrent la tendresse, la représentation et des couples mixtes crédibles.</p>
         <div class="grid" role="list" aria-label="Liste des livres">
-          <article class="book" role=
+          <article class="book" role="listitem">
+            <div class="cover" aria-hidden="true"><span class="tag">Roman publié</span></div>
+            <h3 id="title_imogene">All of Me - Imogene</h3>
+            <p id="desc_imogene">...</p>
+            <div class="actions">
+              <a id="all_imogene" class="btn btn-primary" target="_blank" rel="noopener" href="#">Toutes plateformes</a>
+              <a id="az_imogene" class="btn btn-primary" target="_blank" rel="noopener" href="#">Amazon Kindle</a>
+            </div>
+          </article>
+
+          <article class="book" role="listitem">
+            <div class="cover" aria-hidden="true"><span class="tag">Roman publié</span></div>
+            <h3 id="title_achille">All of You - Achille</h3>
+            <p id="desc_achille">...</p>
+            <div class="actions">
+              <a id="all_achille" class="btn btn-primary" target="_blank" rel="noopener" href="#">Toutes plateformes</a>
+              <a id="az_achille" class="btn btn-primary" target="_blank" rel="noopener" href="#">Amazon Kindle</a>
+            </div>
+          </article>
+
+          <article class="book" role="listitem">
+            <div class="cover" aria-hidden="true"><span class="tag">À paraître</span></div>
+            <h3 id="title_ezra">All of You - Ezra</h3>
+            <p id="desc_ezra">...</p>
+            <div class="actions">
+              <a id="all_ezra" class="btn btn-primary" target="_blank" rel="noopener" href="#">Toutes plateformes</a>
+              <a id="az_ezra" class="btn btn-primary" target="_blank" rel="noopener" href="#">Amazon Kindle</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="extrait" class="section">
+      <div class="wrap excerpt">
+        <div>
+          <h2 id="excerpt_title">Extrait - Ezra</h2>
+          <p class="muted">Un aperçu (sans spoiler) pour vous mettre dans l'ambiance.</p>
+          <blockquote id="excerpt_text">...</blockquote>
+          <div class="cta">
+            <a class="btn btn-primary" href="#contact">Être prévenu·e de la sortie</a>
+            <a class="btn btn-ghost" href="#livres">Retour aux livres</a>
+          </div>
+        </div>
+        <div class="card">
+          <img id="excerpt_image" src="" alt="Cerisiers en fleurs, ambiance douce et rosée"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="a-propos" class="section">
+      <div class="wrap">
+        <h2>À propos</h2>
+        <p id="about_text" class="muted">...</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap nl">
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">Demande presse, chronique, ou simple message — je lis tout.</p>
+          <form name="contact" method="post" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+            <div class="form-row">
+              <input type="text" name="nom" placeholder="Votre nom" aria-label="Nom" required>
+              <input type="email" name="email" placeholder="Votre email" aria-label="Email" required>
+            </div>
+            <textarea name="message" placeholder="Votre message" aria-label="Message" required></textarea>
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;font-family:'Playfair Display',serif">Kit Presse</h3>
+          <ul style="margin:15px 0 0;padding-left:20px;color:var(--sub);line-height:1.8">
+            <li>Bio courte & longue</li>
+            <li>Couvertures HD (Imogene, Achille, Ezra)</li>
+            <li>Extraits & tropes</li>
+            <li>Photos d'autrice</li>
+          </ul>
+          <p style="margin-top:20px"><a id="presskit_link" class="btn btn-ghost" href="#">Télécharger</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>© <span id="y"></span> Nadyl Nadé — Tous droits réservés</div>
+      <div class="legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Widget Identity pour login (OK sur la home) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+        }
+      });
+    }
+  </script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    async function loadContent() {
+      try {
+        const res = await fetch('/content/site.json', {cache: 'no-cache'});
+        const data = await res.json();
+        // HERO
+        hero_title.textContent = data.hero.title;
+        hero_lead.textContent = data.hero.lead;
+        hero_image.src = data.assets.hero_image;
+        // BOOKS
+        const b = data.books;
+        title_imogene.textContent = b.imogene.title; desc_imogene.textContent = b.imogene.desc;
+        all_imogene.href = b.imogene.all_platforms_url; az_imogene.href = b.imogene.amazon_url;
+        title_achille.textContent = b.achille.title; desc_achille.textContent = b.achille.desc;
+        all_achille.href = b.achille.all_platforms_url; az_achille.href = b.achille.amazon_url;
+        title_ezra.textContent = b.ezra.title; desc_ezra.textContent = b.ezra.desc;
+        all_ezra.href = b.ezra.all_platforms_url; az_ezra.href = b.ezra.amazon_url;
+        // EXCERPT / ABOUT / PRESSKIT
+        excerpt_title.textContent = data.excerpt.title;
+        excerpt_text.textContent = data.excerpt.text;
+        excerpt_image.src = data.assets.excerpt_image;
+        about_text.textContent = data.about.text;
+        presskit_link.href = data.assets.presskit_url;
+      } catch(e) {
+        console.error('Chargement du contenu échoué', e);
+      }
+    }
+    loadContent();
+  </script>
+</body>
+</html>
