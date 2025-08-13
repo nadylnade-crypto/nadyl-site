@@ -1,12 +1,13 @@
-
 backend:
   name: git-gateway
-  branch: main  # ⚠️ si ta branche par défaut est "master", remplace par master
+  branch: main
+  site_domain: nadyl-nade.netlify.app
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
 
-publish_mode: editorial_workflow
+# Publie direct (pas de brouillons compliqués)
+publish_mode: simple
 
 collections:
   - name: "site"
@@ -22,6 +23,7 @@ collections:
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Texte (lead)", name: "lead", widget: "text" }
+
           - label: "LIVRES"
             name: "books"
             widget: "object"
@@ -30,41 +32,46 @@ collections:
                 name: "imogene"
                 widget: "object"
                 fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "desc", widget: "text"}
-                  - {label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string"}
-                  - {label: "Lien - Amazon", name: "amazon_url", widget: "string"}
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string" }
+                  - { label: "Lien - Amazon", name: "amazon_url", widget: "string" }
+
               - label: "Achille"
                 name: "achille"
                 widget: "object"
                 fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "desc", widget: "text"}
-                  - {label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string"}
-                  - {label: "Lien - Amazon", name: "amazon_url", widget: "string"}
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string" }
+                  - { label: "Lien - Amazon", name: "amazon_url", widget: "string" }
+
               - label: "Ezra"
                 name: "ezra"
                 widget: "object"
                 fields:
-                  - {label: "Titre", name: "title", widget: "string"}
-                  - {label: "Description", name: "desc", widget: "text"}
-                  - {label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string"}
-                  - {label: "Lien - Amazon", name: "amazon_url", widget: "string"}
+                  - { label: "Titre", name: "title", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Lien - Toutes plateformes", name: "all_platforms_url", widget: "string" }
+                  - { label: "Lien - Amazon", name: "amazon_url", widget: "string" }
+
           - label: "EXTRAIT"
             name: "excerpt"
             widget: "object"
             fields:
-              - {label: "Titre", name: "title", widget: "string"}
-              - {label: "Texte", name: "text", widget: "text"}
-          - label: "A PROPOS"
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Texte", name: "text", widget: "text" }
+
+          - label: "À PROPOS"
             name: "about"
             widget: "object"
             fields:
-              - {label: "Texte", name: "text", widget: "text"}
+              - { label: "Texte", name: "text", widget: "text" }
+
           - label: "ASSETS"
             name: "assets"
             widget: "object"
             fields:
-              - {label: "Image hero (URL)", name: "hero_image", widget: "string"}
-              - {label: "Image extrait (URL)", name: "excerpt_image", widget: "string"}
-              - {label: "Kit Presse (URL)", name: "presskit_url", widget: "string"}
+              - { label: "Image hero (URL)", name: "hero_image", widget: "string" }
+              - { label: "Image extrait (URL)", name: "excerpt_image", widget: "string" }
+              - { label: "Kit Presse (URL)", name: "presskit_url", widget: "string" }
