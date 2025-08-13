@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Parce que l'amour n'a pas besoin de chaos pour être beau.",
+    "lead": "Autrice de romances où les héroïnes noires, rondes et puissantes prennent toute la lumière. Découvrez All of Me — Imogene, All of You — Achille et la prochaine : All of You — Ezra, une romance en Corée du Sud avec tension, humour et douceur."
+  },
+  "books": {
+    "imogene": {
+      "title": "All of Me — Imogene",
+      "desc": "Une héroïne qui refuse le chaos, un amour qui apprend à respirer. Comédie romantique contemporaine.",
+      "all_platforms_url": "https://books2read.com/u/bMMzW7",
+      "amazon_url": "https://www.amazon.fr/ALL-ME-Imogene-Nadyl-Nad%C3%A9-ebook/dp/B0CR1NDP2R/ref=tmm_kin_swatch_0"
+    },
+    "achille": {
+      "title": "All of You — Achille",
+      "desc": "Elle, solitaire et brillante. Lui, réservé. Une romance tendre, piquante, et résolument moderne.",
+      "all_platforms_url": "https://books2read.com/u/38wW77",
+      "amazon_url": "https://www.amazon.fr/ALL-YOU-ACHILLE-Nadyl-Nad%C3%A9-ebook/dp/B0DTFKCM21/ref=tmm_kin_swatch_0"
+    },
+    "ezra": {
+      "title": "All of You — Ezra",
+      "desc": "Une cheffe d'entreprise réunionnaise en Corée du Sud. Un héritier chaebol décidé à la séduire. Tension, humour, clashs culturels.",
+      "all_platforms_url": "#",
+      "amazon_url": "#"
+    }
+  },
+  "excerpt": {
+    "title": "Extrait • Ezra",
+    "text": "« Je l'ai vu avant qu'il ne me voie. Grand. Trop net. Trop calme. Et pourtant - il avait cette façon absurde de demander du miel comme on demande une faveur dangereuse. »"
+  },
+  "about": {
+    "text": "Je m'appelle Nadyl Nadé. J'écris des romances qui respirent : des héroïnes noires, rondes, ancrées dans le réel, des héros qui apprennent, et des histoires qui laissent de la place au silence, au respect et au désir."
+  },
+  "assets": {
+    "hero_image": "https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2400&auto=format&fit=crop",
+    "excerpt_image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2400&auto=format&fit=crop",
+    "presskit_url": "/kit-presse-nadyl.pdf"
+  }
+}
