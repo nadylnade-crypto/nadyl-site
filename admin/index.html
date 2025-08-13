@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin — Nadyl</title>
+  </head>
+  <body>
+    <!-- Widget Identity (obligatoire) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Accepte automatiquement l'invitation si l'URL contient le token
+      function initIdentity() {
+        if (!window.netlifyIdentity) return;
+        var hash = window.location.hash || "";
+        if (hash.includes("invite_token")) {
+          try {
+            window.netlifyIdentity.acceptInvite().then(function(){
+              window.location.replace('/admin/');
+            }).catch(function(){
+              window.netlifyIdentity.open('login');
+            });
+          } catch(e) {
+            window.netlifyIdentity.open('login');
+          }
+          return;
+        }
+        window.netlifyIdentity.on('init', function(user){
+          if (!user) window.netlifyIdentity.open('login');
+        });
+      }
+      document.addEventListener('DOMContentLoaded', initIdentity);
+    </script>
+  </body>
+</html>
